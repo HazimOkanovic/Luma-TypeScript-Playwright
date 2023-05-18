@@ -7,12 +7,6 @@ const keys = {
   apikey: 'bcc0a5c7-2959-4b34-a25b-fea678eedbfa',
   apisecret: 'ebe55add-da32-472a-a344-41f39339a050',
 }
-
-const requestOptions = {
-  headers: {
-    Accept: 'application/json',
-  },
-}
     
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
     
@@ -30,7 +24,7 @@ export const getLatestEmail = async (email: string): Promise<Email> => {
   const url = `${baseEmailUrl}/inbox?${queryParams}`
   let triesLeft = 60
   do {
-    const response = await fetch(url, requestOptions)
+    const response = await fetch(url)
     if (response.ok) {
       const body = await response.json()
       if (body.data.length > 0) {
@@ -57,7 +51,7 @@ export const getLatestEmail = async (email: string): Promise<Email> => {
 export const deleteEmail = async (id: string) => {
   const queryParams = new URLSearchParams({ ...keys, mesid: id }).toString()
   const url = `${baseEmailUrl}/delete?${queryParams}`
-  const response = await fetch(url, requestOptions)
+  const response = await fetch(url)
   if (!response.ok) {
     console.error(`[API] could not delete email: ${await response.text()}`)
   }
