@@ -1,11 +1,25 @@
 import { expect, test } from "@playwright/test";
-import { getLatestEmail } from "../pages/email-api";
-import { EmailPage } from "../pages/emailPage";
-import { randomText } from "../helper/helpers";
+import { getLatestEmail } from "../helpers/emailHelpers/email-api";
+import { EmailPage } from "../helpers/emailHelpers/emailPage";
+import { randomText } from "../utils/utils";
 import CreateAccountPage from "../pages/createAccountPage";
+import HomePage from "../pages/homePage";
 
 
-test.only("Sign up user", async ({ page, baseURL }) => {
+test("Navigate to Create Account Page", async ({ page, baseURL }) => {
+  const homePage = new HomePage(page);
+
+  await page.goto(`${baseURL}`);
+  await homePage.signupButtonClick();
+
+  await expect(page).toHaveURL("https://magento.softwaretestingboard.com/customer/account/create/");
+  await expect(page.locator("//h1//span[contains(text(), 'Create New')]")).toHaveText("Create New Customer Account")
+  
+  await page.close();
+});
+
+/*
+test("Successfully create account and receive an email", async ({ page, baseURL }) => {
   const createAccountPage = new CreateAccountPage(page);
   const emailPage = new EmailPage(page);
   const userName = randomText()
@@ -17,7 +31,7 @@ test.only("Sign up user", async ({ page, baseURL }) => {
 
   //await loginPage.enterEmail({ email: userEmail });
   //await loginPage.enterPassword({ password });
-  await createAccountPage.signupButtonClick();
+  //await createAccountPage.signupButtonClick();
 
   //const email = await getLatestEmail(userEmail);
   //await emailPage.renderContent(email.html);
@@ -26,4 +40,4 @@ test.only("Sign up user", async ({ page, baseURL }) => {
   await expect(page).toHaveURL("https://magento.softwaretestingboard.com/customer/account/create/");
   await expect(page.locator("//h1//span[contains(text(), 'Create New')]")).toHaveText("Create New Customer Account")
   await page.close();
-});
+}); */

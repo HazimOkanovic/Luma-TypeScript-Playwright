@@ -1,11 +1,11 @@
 import fetch from 'node-fetch'
 import { URLSearchParams } from 'url'
 
-const baseUrl = 'https://api.mail7.io'
+const baseEmailUrl = 'https://api.mail7.io'
 
 const keys = {
-  apikey: 'da772efb-8331-47c9-bbd7-58b2f39e8444',
-  apisecret: 'c2e99a1b-b58f-4d03-9409-f8c0ea753ccb',
+  apikey: 'bcc0a5c7-2959-4b34-a25b-fea678eedbfa',
+  apisecret: 'ebe55add-da32-472a-a344-41f39339a050',
 }
 
 const requestOptions = {
@@ -27,7 +27,7 @@ export type Email = {
 // Retrieve the first email from inbox and delete it right away
 export const getLatestEmail = async (email: string): Promise<Email> => {
   const queryParams = new URLSearchParams({ ...keys, to: email.split('@')[0], domain: email.split('@')[1],}).toString()
-  const url = `${baseUrl}/inbox?${queryParams}`
+  const url = `${baseEmailUrl}/inbox?${queryParams}`
   let triesLeft = 60
   do {
     const response = await fetch(url, requestOptions)
@@ -56,7 +56,7 @@ export const getLatestEmail = async (email: string): Promise<Email> => {
 
 export const deleteEmail = async (id: string) => {
   const queryParams = new URLSearchParams({ ...keys, mesid: id }).toString()
-  const url = `${baseUrl}/delete?${queryParams}`
+  const url = `${baseEmailUrl}/delete?${queryParams}`
   const response = await fetch(url, requestOptions)
   if (!response.ok) {
     console.error(`[API] could not delete email: ${await response.text()}`)

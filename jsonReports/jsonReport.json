@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Sign up user",
+          "title": "Navigate to Create Account Page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,17 +78,17 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 16714,
+                  "duration": 11641,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-18T12:29:39.021Z",
+                  "startTime": "2023-05-18T13:07:13.865Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Sign-up-user/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Navigate-to-Create-Account-Page/video.webm"
                     }
                   ]
                 }
@@ -96,10 +96,10 @@
               "status": "expected"
             }
           ],
-          "id": "fb03dd77d8ea81537a39-efd4631aadfae4f52eeb",
+          "id": "fb03dd77d8ea81537a39-d23cc3d235e755a698d6",
           "file": "tests/createAccountTests.ts",
-          "line": 8,
-          "column": 6
+          "line": 9,
+          "column": 5
         }
       ]
     }

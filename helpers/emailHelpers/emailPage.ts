@@ -8,7 +8,7 @@ export class EmailPage {
 
   constructor(page: Page) {
     this.page = page
-    this.activateAccountLink = this.page.locator("//img[contains(@alt, 'Verify Now')]")
+    this.activateAccountLink = this.page.locator("//td//p[contains(text(), 'Welcome')]")
   }
 
   async renderContent(content: string) {
@@ -19,14 +19,6 @@ export class EmailPage {
   }
 
   async successfullyVerifiedEmail() {
-    const locator = this.page.locator("//h1//span[contains(text(), 'Create New')]");
-    const expectedResult = "Create New User Account";
-    
-    await expect(this.page).toHaveURL("https://magento.softwaretestingboard.com/customer/account/create/");
-  }
-
-  async clickVerifyEmailLink() {
-    await this.activateAccountLink.click()
-    await this.page.waitForLoadState()
+    await expect(this.activateAccountLink).toHaveText("Welcome to Main Website Store.")
   }
 }
