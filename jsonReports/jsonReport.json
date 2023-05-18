@@ -47,7 +47,7 @@
         "testMatch": [
           "tests/createAccountTests.ts"
         ],
-        "timeout": 30000
+        "timeout": 300000
       }
     ],
     "shard": null,
@@ -64,12 +64,12 @@
       "line": 0,
       "specs": [
         {
-          "title": "Navigate to Create Account Page",
+          "title": "Successfully create account and receive an email",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 30000,
+              "timeout": 300000,
               "annotations": [],
               "expectedStatus": "passed",
               "projectId": "",
@@ -78,17 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 11641,
+                  "duration": 34091,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-18T13:07:13.865Z",
+                  "startTime": "2023-05-18T22:02:45.298Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Navigate-to-Create-Account-Page/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Successfully-create-account-and-receive-an-email/video-1.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Successfully-create-account-and-receive-an-email/video.webm"
                     }
                   ]
                 }
@@ -96,9 +101,9 @@
               "status": "expected"
             }
           ],
-          "id": "fb03dd77d8ea81537a39-d23cc3d235e755a698d6",
+          "id": "fb03dd77d8ea81537a39-327e84bb2593f4f35468",
           "file": "tests/createAccountTests.ts",
-          "line": 9,
+          "line": 23,
           "column": 5
         }
       ]

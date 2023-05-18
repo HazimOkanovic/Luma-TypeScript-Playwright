@@ -4,8 +4,9 @@ import { EmailPage } from "../helpers/emailHelpers/emailPage";
 import { randomText } from "../utils/utils";
 import CreateAccountPage from "../pages/createAccountPage";
 import HomePage from "../pages/homePage";
+import { SecondEmailPage } from "../helpers/emailHelpers/secondEmailPage";
 
-
+/*
 test("Navigate to Create Account Page", async ({ page, baseURL }) => {
   const homePage = new HomePage(page);
 
@@ -16,28 +17,33 @@ test("Navigate to Create Account Page", async ({ page, baseURL }) => {
   await expect(page.locator("//h1//span[contains(text(), 'Create New')]")).toHaveText("Create New Customer Account")
   
   await page.close();
-});
+}); */
 
-/*
-test("Successfully create account and receive an email", async ({ page, baseURL }) => {
+
+test("Successfully create account and receive an email", async ({ page, baseURL, context }) => {
   const createAccountPage = new CreateAccountPage(page);
   const emailPage = new EmailPage(page);
-  const userName = randomText()
+  
+  const name = randomText()
 
-  const userEmail = `${userName}@mail7.io`;
+  const userEmail = `${name}@inboxkitten.com`;
   const password = "Sifra123**";
+  
+  await page.goto(`${baseURL}customer/account/create`);
 
-  await page.goto(`${baseURL}`);
+  await createAccountPage.enterFirstName({ name });
+  await createAccountPage.enterLastName({ name });
+  await createAccountPage.enterEmail({ email: userEmail });
+  await createAccountPage.enterPassword({ password });
+  await createAccountPage.enterConfirmPassword({ password });
+  await createAccountPage.createAccountButtonClick();
 
-  //await loginPage.enterEmail({ email: userEmail });
-  //await loginPage.enterPassword({ password });
-  //await createAccountPage.signupButtonClick();
+  const secondTab = await context.newPage();
+  const secondEmailPage = new SecondEmailPage(secondTab);
+  await secondTab.goto("https://inboxkitten.com/inbox/"+`${name}`);
+  
+  await expect(secondTab.locator("//div[@class='row-subject']")).toHaveText("Welcome to Main Website Store")
 
-  //const email = await getLatestEmail(userEmail);
-  //await emailPage.renderContent(email.html);
-  //await emailPage.clickVerifyEmailLink();
-
-  await expect(page).toHaveURL("https://magento.softwaretestingboard.com/customer/account/create/");
-  await expect(page.locator("//h1//span[contains(text(), 'Create New')]")).toHaveText("Create New Customer Account")
+  await secondTab.close();
   await page.close();
-}); */
+}); 
