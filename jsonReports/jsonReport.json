@@ -45,7 +45,7 @@
         "testDir": "/Users/hazim.okanovic/Documents/Playwright",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(m)[jt]s?(x)"
+          "tests/createAccountTests.ts"
         ],
         "timeout": 30000
       }
@@ -58,8 +58,8 @@
   },
   "suites": [
     {
-      "title": "tests/signup.test.ts",
-      "file": "tests/signup.test.ts",
+      "title": "tests/createAccountTests.ts",
+      "file": "tests/createAccountTests.ts",
       "column": 0,
       "line": 0,
       "specs": [
@@ -78,17 +78,17 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 10948,
+                  "duration": 16714,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-17T22:02:34.584Z",
+                  "startTime": "2023-05-18T12:29:39.021Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-signup-Sign-up-user/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Sign-up-user/video.webm"
                     }
                   ]
                 }
@@ -96,8 +96,8 @@
               "status": "expected"
             }
           ],
-          "id": "b2bab78f78d0c7a2961f-ee5de450c1617ef99882",
-          "file": "tests/signup.test.ts",
+          "id": "fb03dd77d8ea81537a39-efd4631aadfae4f52eeb",
+          "file": "tests/createAccountTests.ts",
           "line": 8,
           "column": 6
         }

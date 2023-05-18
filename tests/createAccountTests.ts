@@ -2,11 +2,11 @@ import { expect, test } from "@playwright/test";
 import { getLatestEmail } from "../pages/email-api";
 import { EmailPage } from "../pages/emailPage";
 import { randomText } from "../helper/helpers";
-import LoginPage from "../pages/loginPage";
+import CreateAccountPage from "../pages/createAccountPage";
 
 
 test.only("Sign up user", async ({ page, baseURL }) => {
-  const loginPage = new LoginPage(page);
+  const createAccountPage = new CreateAccountPage(page);
   const emailPage = new EmailPage(page);
   const userName = randomText()
 
@@ -17,7 +17,7 @@ test.only("Sign up user", async ({ page, baseURL }) => {
 
   //await loginPage.enterEmail({ email: userEmail });
   //await loginPage.enterPassword({ password });
-  await loginPage.signupButtonClick();
+  await createAccountPage.signupButtonClick();
 
   //const email = await getLatestEmail(userEmail);
   //await emailPage.renderContent(email.html);
