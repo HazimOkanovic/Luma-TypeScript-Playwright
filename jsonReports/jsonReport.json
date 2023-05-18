@@ -45,7 +45,7 @@
         "testDir": "/Users/hazim.okanovic/Documents/Playwright",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(m)[jt]s?(x)"
+          "tests/createAccountTests.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests/signup.test.ts",
-      "file": "tests/signup.test.ts",
+      "title": "tests/createAccountTests.ts",
+      "file": "tests/createAccountTests.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Sign up user",
+          "title": "Navigate to Create Account Page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,17 +78,17 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 10948,
+                  "duration": 11641,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-17T22:02:34.584Z",
+                  "startTime": "2023-05-18T13:07:13.865Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-signup-Sign-up-user/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Navigate-to-Create-Account-Page/video.webm"
                     }
                   ]
                 }
@@ -96,10 +96,10 @@
               "status": "expected"
             }
           ],
-          "id": "b2bab78f78d0c7a2961f-ee5de450c1617ef99882",
-          "file": "tests/signup.test.ts",
-          "line": 8,
-          "column": 6
+          "id": "fb03dd77d8ea81537a39-d23cc3d235e755a698d6",
+          "file": "tests/createAccountTests.ts",
+          "line": 9,
+          "column": 5
         }
       ]
     }
