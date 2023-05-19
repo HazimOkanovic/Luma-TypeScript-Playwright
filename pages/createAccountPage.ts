@@ -50,4 +50,8 @@ export default class CreateAccountPage {
   get createAccountButton(){
     return this.page.locator("//button[@title='Create an Account']");
   }
+
+  get pageTitle(){
+    return this.page.locator("//span[@data-ui-id='page-title-wrapper']");
+  }
 }

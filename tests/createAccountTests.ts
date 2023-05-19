@@ -6,11 +6,12 @@ import { Constants } from "../constants";
 
 test("Navigate to Create Account Page", async ({ page, baseURL }) => {
   const homePage = new HomePage(page);
+  const createAccountPage = new CreateAccountPage(page);
 
   await page.goto(`${baseURL}`);
   await homePage.signupButtonClick();
 
-  await expect(page.locator("//h1//span[contains(text(), 'Create New')]")).toHaveText("Create New Customer Account")
+  await expect(createAccountPage.pageTitle).toHaveText(Constants.createAccountPageTitle)
   
   await page.close();
 }); 

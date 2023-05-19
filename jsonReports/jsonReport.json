@@ -78,12 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 10960,
+                  "duration": 12106,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-19T13:05:41.318Z",
+                  "startTime": "2023-05-19T18:58:12.413Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -116,12 +116,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 35433,
+                  "duration": 34663,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-19T13:05:52.952Z",
+                  "startTime": "2023-05-19T18:58:25.300Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -141,7 +141,7 @@
           ],
           "id": "fb03dd77d8ea81537a39-327e84bb2593f4f35468",
           "file": "tests/createAccountTests.ts",
-          "line": 18,
+          "line": 19,
           "column": 5
         }
       ]
