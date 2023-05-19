@@ -78,12 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 34091,
+                  "duration": 33497,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-18T22:02:45.298Z",
+                  "startTime": "2023-05-19T12:09:24.946Z",
                   "attachments": [
                     {
                       "name": "video",

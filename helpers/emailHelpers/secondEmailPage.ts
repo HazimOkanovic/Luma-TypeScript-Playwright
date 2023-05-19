@@ -4,20 +4,11 @@ export class SecondEmailPage {
   
   constructor(public page: Page) { }
 
-  async enterUserName(value: {name: string}) {
-    await this.userNameInput.type(value.name);
+  async verifyReceivedEmail(value: {name: string}){
+    await this.page.goto("https://inboxkitten.com/inbox/" + value.name);
+  
+    await expect(this.page.locator("//div[@class='row-subject']")).toHaveText("Welcome to Main Website Store")
+  
+    await this.page.close();
   }
-
-  async clickInboxButton() {
-    await this.inboxButton.click();
-  }
-
-
-  get userNameInput(){
-    return this.page.locator("//input[@id='popupusername']");
-  } 
-
-  get inboxButton(){
-    return this.page.locator("//button[@class='swal2-confirm swal2-styled']");
-  } 
 }

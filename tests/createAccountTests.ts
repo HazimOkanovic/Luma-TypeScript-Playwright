@@ -40,10 +40,7 @@ test("Successfully create account and receive an email", async ({ page, baseURL,
 
   const secondTab = await context.newPage();
   const secondEmailPage = new SecondEmailPage(secondTab);
-  await secondTab.goto("https://inboxkitten.com/inbox/"+`${name}`);
-  
-  await expect(secondTab.locator("//div[@class='row-subject']")).toHaveText("Welcome to Main Website Store")
-
-  await secondTab.close();
+  await secondEmailPage.verifyReceivedEmail({name});
+ 
   await page.close();
 }); 
