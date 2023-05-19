@@ -1,26 +1,26 @@
 import { Page } from "@playwright/test";
 
 export default class CreateAccountPage {
-  constructor(public page: Page) {}
+  constructor(public page: Page) { }
 
-  async enterFirstName(value: {name: string}) {
-    await this.firstNameInput.type(value.name);
+  async enterFirstName(name: string) {
+    await this.firstNameInput.type(name);
   }
 
-  async enterLastName(value: {name: string}) {
-    await this.lastNameInput.type(value.name);
+  async enterLastName(name: string) {
+    await this.lastNameInput.type(name);
   }
 
-  async enterEmail(value: { email: string }) {
-    await this.emailInput.type(value.email);
+  async enterEmail(email: string ) {
+    await this.emailInput.type(email);
   }
 
-  async enterPassword(value: { password: string }) {
-    await this.passwordInput.type(value.password);
+  async enterPassword( password: string ) {
+    await this.passwordInput.type(password);
   }
 
-  async enterConfirmPassword(value: {password: string}) {
-    await this.passwordConfirmationInput.type(value.password);
+  async enterConfirmPassword(password: string) {
+    await this.passwordConfirmationInput.type(password);
   }
 
   async createAccountButtonClick() {
