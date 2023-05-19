@@ -27,26 +27,6 @@ export default class CreateAccountPage {
     await this.createAccountButton.click();
   }
 
-  async getFirstNameError(){
-    await this.firstNameError.textContent();
-  }
-
-  async getLastNameError(){
-    await this.lastNameError.textContent();
-  }
-
-  async getEmailError(){
-    await this.emailError.textContent();
-  }
-
-  async getPasswordError(){
-    await this.passwordError.textContent();
-  }
-
-  async getPasswordConfirmationError(){
-    await this.passwordConfirmationError.textContent();
-  }
-
   get firstNameInput(){
     return this.page.locator("//input[@id='firstname']");
   }
@@ -76,22 +56,22 @@ export default class CreateAccountPage {
   }
 
   get firstNameError(){
-    return this.page.locator("#firstname-error");
+    return this.page.locator("//div[@id = 'firstname-error']");
   }
 
   get lastNameError(){
-    return this.page.locator("#lastname-error");
+    return this.page.locator("//div[@id = 'lastname-error']");
   }
 
   get emailError(){
-    return this.page.locator("#email_address-error");
+    return this.page.locator("//div[@id = 'email_address-error']");
   }
 
   get passwordError(){
-    return this.page.locator("#password-error");
+    return this.page.locator("//div[@id = 'password-error']");
   }
 
   get passwordConfirmationError(){
-    return this.page.locator("#password-confirmation-error");
+    return this.page.locator("//div[@id = 'password-confirmation-error']");
   }
 }
