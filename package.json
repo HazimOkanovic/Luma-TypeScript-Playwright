@@ -13,6 +13,7 @@
   },
   "testTimeout": 120000,
   "dependencies": {
+    "2captcha": "^3.0.6",
     "node-fetch": "^2.6.1",
     "unzip": "^0.1.11",
     "unzipper": "^0.10.14"

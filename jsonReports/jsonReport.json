@@ -45,7 +45,7 @@
         "testDir": "/Users/hazim.okanovic/Documents/Playwright",
         "testIgnore": [],
         "testMatch": [
-          "tests/createAccountTests.ts"
+          "tests/logInTests.ts"
         ],
         "timeout": 300000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests/createAccountTests.ts",
-      "file": "tests/createAccountTests.ts",
+      "title": "tests/logInTests.ts",
+      "file": "tests/logInTests.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Leaving all required fields empty",
+          "title": "Navigate to Login Page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,17 +78,17 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 9670,
+                  "duration": 15079,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-19T20:07:43.787Z",
+                  "startTime": "2023-05-21T14:10:22.117Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Leaving-all-required-fields-empty/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-logInTests.ts-Navigate-to-Login-Page/video.webm"
                     }
                   ]
                 }
@@ -96,85 +96,9 @@
               "status": "expected"
             }
           ],
-          "id": "fb03dd77d8ea81537a39-fb9a548861a3d6bd8c7c",
-          "file": "tests/createAccountTests.ts",
-          "line": 38,
-          "column": 5
-        },
-        {
-          "title": "Entering different passwords",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 300000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 24739,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-19T20:07:53.875Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Entering-different-passwords/video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "fb03dd77d8ea81537a39-edbf824da5d60e69516e",
-          "file": "tests/createAccountTests.ts",
-          "line": 54,
-          "column": 5
-        },
-        {
-          "title": "Entering invalid email",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 300000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 24750,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-19T20:08:18.615Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-createAccountTests.ts-Entering-invalid-email/video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "fb03dd77d8ea81537a39-46e18c2c69fccd3e86ea",
-          "file": "tests/createAccountTests.ts",
-          "line": 71,
+          "id": "a1035d19b3840c71d1b0-2bedf1bbd87fdf0ce270",
+          "file": "tests/logInTests.ts",
+          "line": 6,
           "column": 5
         }
       ]
