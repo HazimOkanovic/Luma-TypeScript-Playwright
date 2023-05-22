@@ -78,12 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 15079,
+                  "duration": 11470,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-21T14:10:22.117Z",
+                  "startTime": "2023-05-21T15:21:02.144Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -98,8 +98,46 @@
           ],
           "id": "a1035d19b3840c71d1b0-2bedf1bbd87fdf0ce270",
           "file": "tests/logInTests.ts",
-          "line": 6,
+          "line": 7,
           "column": 5
+        },
+        {
+          "title": "Successful login",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 18161,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-21T15:21:14.027Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-logInTests.ts-Successful-login/video.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a1035d19b3840c71d1b0-24835be0c1c0c5281222",
+          "file": "tests/logInTests.ts",
+          "line": 19,
+          "column": 7
         }
       ]
     }

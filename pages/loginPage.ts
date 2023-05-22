@@ -29,7 +29,7 @@ export default class LoginPage{
     }
 
     get passwordInput(){
-        return this.page.locator("//input[@id = 'pass']");
+        return this.page.locator("//input[@name= 'login[password]']");
     }
 
     get signInButton(){
