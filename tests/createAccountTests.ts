@@ -3,7 +3,7 @@ import CreateAccountPage from "../pages/createAccountPage";
 import HomePage from "../pages/homePage";
 import { EmailPage } from "../helpers/emailHelper/emailPage";
 import { Constants } from "../constants";
-/*
+
 test("Navigate to Create Account Page", async ({ page, baseURL }) => {
   const homePage = new HomePage(page);
   const createAccountPage = new CreateAccountPage(page);
@@ -33,7 +33,7 @@ test("Successfully create account and receive an email", async ({ page, baseURL,
   await emailPage.verifyReceivedEmail(Constants.name);
  
   await page.close();
-});  */
+});  
 
 test("Leaving all required fields empty", async({ page, baseURL }) => {
   const createAccountPage = new CreateAccountPage(page);
