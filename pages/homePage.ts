@@ -42,4 +42,8 @@ export default class HomePage {
   get manJacketsButton() {
     return this.page.locator("(//span[text() = 'Jackets'])[2]");
   }
+
+  get cartCounterNumber() {
+    return this.page.locator("//span[@class = 'counter-number']");
+  }
 }

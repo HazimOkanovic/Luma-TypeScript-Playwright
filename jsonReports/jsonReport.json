@@ -78,12 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 17742,
+                  "duration": 17170,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-29T11:49:38.323Z",
+                  "startTime": "2023-05-29T13:26:28.816Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -103,7 +103,7 @@
           ],
           "id": "048cb33a73ca8790b87b-2b6f8ebdaa7a4183dc7a",
           "file": "tests/menJacketsTests.ts",
-          "line": 5,
+          "line": 6,
           "column": 5
         },
         {
@@ -121,12 +121,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 10399,
+                  "duration": 10484,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-29T11:49:56.480Z",
+                  "startTime": "2023-05-29T13:26:46.702Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -146,7 +146,7 @@
           ],
           "id": "048cb33a73ca8790b87b-827ed003d9bf7c2b7791",
           "file": "tests/menJacketsTests.ts",
-          "line": 18,
+          "line": 19,
           "column": 5
         },
         {
@@ -164,12 +164,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 11759,
+                  "duration": 10543,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-29T11:50:06.880Z",
+                  "startTime": "2023-05-29T13:26:57.186Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -189,7 +189,7 @@
           ],
           "id": "048cb33a73ca8790b87b-d61124f1484012f32838",
           "file": "tests/menJacketsTests.ts",
-          "line": 30,
+          "line": 31,
           "column": 5
         },
         {
@@ -207,12 +207,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 12289,
+                  "duration": 10721,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-29T11:50:18.639Z",
+                  "startTime": "2023-05-29T13:27:07.729Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -232,7 +232,93 @@
           ],
           "id": "048cb33a73ca8790b87b-67b41df35a72297b1404",
           "file": "tests/menJacketsTests.ts",
-          "line": 42,
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "Not selecting size and color",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 10233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-29T13:27:18.451Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Not-selecting-size-and-color/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Not-selecting-size-and-color/test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "048cb33a73ca8790b87b-c6bcf14d7d0e005001df",
+          "file": "tests/menJacketsTests.ts",
+          "line": 53,
+          "column": 5
+        },
+        {
+          "title": "Add five products to cart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 22507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-29T13:27:28.685Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "048cb33a73ca8790b87b-a01c1a03da507439b7be",
+          "file": "tests/menJacketsTests.ts",
+          "line": 64,
           "column": 5
         }
       ]

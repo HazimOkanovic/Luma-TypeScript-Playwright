@@ -42,11 +42,11 @@ test("Leaving all required fields empty", async({ page, baseURL }) => {
 
   await createAccountPage.createAccountButtonClick();
 
-  await expect(createAccountPage.firstNameError).toHaveText(Constants.createAccountError);
-  await expect(createAccountPage.lastNameError).toHaveText(Constants.createAccountError);
-  await expect(createAccountPage.emailError).toHaveText(Constants.createAccountError);
-  await expect(createAccountPage.passwordError).toHaveText(Constants.createAccountError);
-  await expect(createAccountPage.passwordConfirmationError).toHaveText(Constants.createAccountError);
+  await expect(createAccountPage.firstNameError).toHaveText(Constants.defaultError);
+  await expect(createAccountPage.lastNameError).toHaveText(Constants.defaultError);
+  await expect(createAccountPage.emailError).toHaveText(Constants.defaultError);
+  await expect(createAccountPage.passwordError).toHaveText(Constants.defaultError);
+  await expect(createAccountPage.passwordConfirmationError).toHaveText(Constants.defaultError);
 
   await page.close();
 });
