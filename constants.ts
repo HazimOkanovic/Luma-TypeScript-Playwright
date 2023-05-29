@@ -10,5 +10,5 @@ export const Constants = {
     emailTitle : "Welcome to Main Website Store", 
     emailError : "Please enter a valid email address (Ex: johndoe@domain.com).", 
     samePasswordError : "Please enter the same value again.", 
-    createAccountError : "This is a required field."
+    defaultError : "This is a required field."
 } as const;
