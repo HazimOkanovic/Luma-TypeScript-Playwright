@@ -45,7 +45,7 @@
         "testDir": "/Users/hazim.okanovic/Documents/Playwright",
         "testIgnore": [],
         "testMatch": [
-          "tests/logInTests.ts"
+          "tests/menJacketsTests.ts"
         ],
         "timeout": 300000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests/logInTests.ts",
-      "file": "tests/logInTests.ts",
+      "title": "tests/menJacketsTests.ts",
+      "file": "tests/menJacketsTests.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Navigate to Login Page",
+          "title": "Navigate to Jackets page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,17 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 12497,
+                  "duration": 17742,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-22T10:07:09.971Z",
+                  "startTime": "2023-05-29T11:49:38.323Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-logInTests.ts-Navigate-to-Login-Page/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Navigate-to-Jackets-page/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Navigate-to-Jackets-page/test-finished-1.png"
                     }
                   ]
                 }
@@ -96,13 +101,13 @@
               "status": "expected"
             }
           ],
-          "id": "a1035d19b3840c71d1b0-2bedf1bbd87fdf0ce270",
-          "file": "tests/logInTests.ts",
-          "line": 7,
+          "id": "048cb33a73ca8790b87b-2b6f8ebdaa7a4183dc7a",
+          "file": "tests/menJacketsTests.ts",
+          "line": 5,
           "column": 5
         },
         {
-          "title": "Successful login",
+          "title": "Sort by price",
           "ok": true,
           "tags": [],
           "tests": [
@@ -116,17 +121,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 18339,
+                  "duration": 10399,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-22T10:07:23.212Z",
+                  "startTime": "2023-05-29T11:49:56.480Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-logInTests.ts-Successful-login/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Sort-by-price/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Sort-by-price/test-finished-1.png"
                     }
                   ]
                 }
@@ -134,10 +144,96 @@
               "status": "expected"
             }
           ],
-          "id": "a1035d19b3840c71d1b0-24835be0c1c0c5281222",
-          "file": "tests/logInTests.ts",
-          "line": 19,
-          "column": 7
+          "id": "048cb33a73ca8790b87b-827ed003d9bf7c2b7791",
+          "file": "tests/menJacketsTests.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "Sort by product name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 11759,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-29T11:50:06.880Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Sort-by-product-name/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Sort-by-product-name/test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "048cb33a73ca8790b87b-d61124f1484012f32838",
+          "file": "tests/menJacketsTests.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "Check the price",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 12289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-29T11:50:18.639Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Check-the-price/video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Check-the-price/test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "048cb33a73ca8790b87b-67b41df35a72297b1404",
+          "file": "tests/menJacketsTests.ts",
+          "line": 42,
+          "column": 5
         }
       ]
     }
