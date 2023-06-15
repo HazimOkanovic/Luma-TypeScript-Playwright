@@ -1,7 +1,35 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
-export default class CreateAccountPage {
-  constructor(public page: Page) { }
+export class CreateAccountPage {
+  readonly page: Page
+  readonly firstNameInput: Locator
+  readonly lastNameInput: Locator
+  readonly emailInput: Locator
+  readonly passwordInput: Locator
+  readonly passwordConfirmationInput: Locator
+  readonly createAccountButton: Locator
+  readonly pageTitle: Locator
+  readonly firstNameError: Locator
+  readonly lastNameError: Locator
+  readonly emailError: Locator
+  readonly passwordError: Locator
+  readonly passwordConfirmationError: Locator
+
+  constructor(page: Page) {
+    this.page = page;
+    this.firstNameInput = page.locator("#firstname");
+    this.lastNameInput = page.locator('#lastname');
+    this.emailInput = page.locator('#email_address');
+    this.passwordInput = page.locator('#password');
+    this.passwordConfirmationInput = page.locator('#password-confirmation');
+    this.createAccountButton = page.locator('button', {hasText: 'Create'});
+    this.pageTitle = page.locator('span', {hasText: 'Account'});
+    this.firstNameError = page.locator('#firstname-error');
+    this.lastNameError = page.locator('#lastname-error');
+    this.emailError = page.locator('#email_address-error');
+    this.passwordError = page.locator('#password-error');
+    this.passwordConfirmationError = page.locator('#password-confirmation-error')
+   }
 
   async enterFirstName( name: string ) {
     await this.firstNameInput.type(name);
@@ -25,53 +53,5 @@ export default class CreateAccountPage {
 
   async createAccountButtonClick() {
     await this.createAccountButton.click();
-  }
-
-  get firstNameInput(){
-    return this.page.locator("//input[@id='firstname']");
-  }
-
-  get lastNameInput(){
-    return this.page.locator("//input[@id='lastname']");
-  }
-
-  get emailInput() {
-    return this.page.locator("//input[@id='email_address']");
-  }
-
-  get passwordInput() {
-    return this.page.locator("//input[@id='password']");
-  }
-
-  get passwordConfirmationInput(){
-    return this.page.locator("//input[@id='password-confirmation']")
-  }
-
-  get createAccountButton(){
-    return this.page.locator("//button[@title='Create an Account']");
-  }
-
-  get pageTitle(){
-    return this.page.locator("//span[@data-ui-id='page-title-wrapper']");
-  }
-
-  get firstNameError(){
-    return this.page.locator("//div[@id = 'firstname-error']");
-  }
-
-  get lastNameError(){
-    return this.page.locator("//div[@id = 'lastname-error']");
-  }
-
-  get emailError(){
-    return this.page.locator("//div[@id = 'email_address-error']");
-  }
-
-  get passwordError(){
-    return this.page.locator("//div[@id = 'password-error']");
-  }
-
-  get passwordConfirmationError(){
-    return this.page.locator("//div[@id = 'password-confirmation-error']");
   }
 }

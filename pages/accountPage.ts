@@ -1,9 +1,11 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
-export default class AccountPage {
-    constructor(public page: Page){ }
+export class AccountPage {
+    readonly page: Page
+    readonly accountTitle: Locator
 
-    get accountTitle() {
-        return this.page.locator("//span[@data-ui-id = 'page-title-wrapper']");
+    constructor(page: Page){ 
+        this.page = page;
+        this.accountTitle = page.locator('span', {hasText: 'Account'});
     }
 }
