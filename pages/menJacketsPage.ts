@@ -1,73 +1,53 @@
-import { Page } from "playwright-core";
+import { Page, Locator } from "playwright-core";
 
-export default class MenJacketsPage{
-    constructor(public page: Page){ }
+export class MenJacketsPage {
+  readonly page: Page
+  readonly pageTitle: Locator
+  readonly firstProduct: Locator
+  readonly secondProduct: Locator
+  readonly productPrice: Locator
+  readonly quantityField: Locator
+  readonly addToCartButton: Locator
+  readonly sizeError: Locator
+  readonly colorError: Locator
+  readonly sizeL: Locator
+  readonly blackColor: Locator
 
-    async clickFirstProduct(){
-      await this.firstProduct.click();
-    }
+  constructor(page: Page) {
+    this.page = page;
+    this.pageTitle = page.locator('span', { hasText: 'Jackets' });
+    this.firstProduct = page.locator('a', { hasText: 'Beamont' });
+    this.secondProduct = page.locator('a', { hasText: 'Hyperion' });
+    this.productPrice = page.locator('span', { hasText: '$' });
+    this.quantityField = page.locator('#qty');
+    this.addToCartButton = page.locator('button', { hasText: 'Cart' });
+    this.sizeError = page.locator('#super_attribute[143]-error')
+    this.colorError = page.locator('#super_attribute[93]-error');
+    this.sizeL = page.locator('div', { hasText: 'L' });
+    this.blackColor = page.locator("//div[@option-label = 'Black']");
+  }
 
-    async clearQuantityField(){
-      await this.quantityField.clear();
-    }
+  async clickFirstProduct() {
+    await this.firstProduct.click();
+  }
 
-    async enterQuantity(quantity: string){
-      await this.quantityField.type(quantity);
-    }
+  async clearQuantityField() {
+    await this.quantityField.clear();
+  }
 
-    async clickAddToCartButton(){
-      await this.addToCartButton.click();
-    }
+  async enterQuantity(quantity: string) {
+    await this.quantityField.type(quantity);
+  }
 
-    async chooseSizeL(){
-      await this.sizeL.click();
-    }
+  async clickAddToCartButton() {
+    await this.addToCartButton.click();
+  }
 
-    async chooseBlackColor(){
-      await this.blackColor.click();
-    }
+  async chooseSizeL() {
+    await this.sizeL.click();
+  }
 
-    get pageTitle(){
-        return this.page.locator("//span[@data-ui-id='page-title-wrapper']");
-      }
-    
-    get sortByButton(){
-      return this.page.locator("(//select[@id = 'sorter'])[1]");
-    }  
-
-    get firstProduct(){
-      return this.page.locator("(//a[@class = 'product-item-link'])[1]");
-    }
-
-    get secondProduct(){
-      return this.page.locator("(//a[@class = 'product-item-link'])[2]");
-    }
-
-    get productPrice(){
-      return this.page.locator("(//span[@class = 'price'])[1]");
-    }
-
-    get quantityField(){
-      return this.page.locator("//input[@name = 'qty']");
-    }
-
-    get addToCartButton(){
-      return this.page.locator("//button[@title = 'Add to Cart']");
-    }
-
-    get sizeError(){
-      return this.page.locator("//div[@id = 'super_attribute[143]-error']");
-    }
-
-    get colorError(){
-      return this.page.locator("//div[@id = 'super_attribute[93]-error']");
-    }
-
-    get sizeL(){
-      return this.page.locator("//div[@option-label = 'L']");
-    }
-
-    get blackColor(){
-      return this.page.locator("//div[@option-label = 'Black']");
-    }
+  async chooseBlackColor() {
+    await this.blackColor.click();
+  }
 }

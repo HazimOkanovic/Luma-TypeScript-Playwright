@@ -4,8 +4,8 @@ export class AccountPage {
     readonly page: Page
     readonly accountTitle: Locator
 
-    constructor(page: Page){ 
+    constructor(page: Page) {
         this.page = page;
-        this.accountTitle = page.locator('span', {hasText: 'Account'});
+        this.accountTitle = page.locator('span', { hasText: 'Account' });
     }
 }
