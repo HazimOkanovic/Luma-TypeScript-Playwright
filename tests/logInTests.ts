@@ -11,9 +11,7 @@ test("Navigate to Login Page", async ({ page, baseURL }) => {
   await page.goto(`${baseURL}`);
   await homePage.signInButtonClick();
 
-  await expect(loginPage.pageTitle).toHaveText("Customer Login")
-
-  await page.close();
+  await expect(loginPage.pageTitle).toHaveText(Constants.loginPageTitle)
 });
 
 test("Successful login", async ({ page, baseURL }) => {
@@ -22,11 +20,9 @@ test("Successful login", async ({ page, baseURL }) => {
 
   await page.goto(`${baseURL}customer/account/login/refer`);
 
-  await loginPage.enterEmail("hazim.okanovic@mail7.io");
-  await loginPage.enterPassword("Something1.");
+  await loginPage.enterEmail(Constants.validEmail);
+  await loginPage.enterPassword(Constants.validPass);
   await loginPage.clickSingInButton();
 
-  await expect(accountPage.accountTitle).toHaveText("My Account")
-
-  await page.close();
+  await expect(accountPage.accountTitle).toHaveText(Constants.accountPageTitle)
 }); 
