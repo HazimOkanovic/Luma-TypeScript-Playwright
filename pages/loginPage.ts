@@ -14,8 +14,8 @@ export class LoginPage {
         this.page = page;
         this.pageTitle = page.locator('span', { hasText: 'Customer' });
         this.emailInput = page.locator('#email');
-        this.passwordInput = page.locator('#pass');
-        this.signInButton = page.locator('#send2');
+        this.passwordInput = page.getByLabel('Password');
+        this.signInButton = page.getByRole('button', { name: 'Sign In' });
         this.emailError = page.locator('#email-error');
         this.passwordError = page.locator('#pass-error');
         this.createAccountButton = page.locator('a', { hasText: 'Create an Account' });

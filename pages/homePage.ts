@@ -11,11 +11,11 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.signUpButton = page.locator('a', { hasText: 'Create an Account' });
-    this.signInButton = page.locator('a', { hasText: 'Sign In' });
-    this.menTab = page.locator('span', { hasText: 'Men' });
-    this.manTopsButton = page.locator('span', { hasText: 'Tops' });
-    this.manJacketsButton = page.locator('span', { hasText: 'Jackets' });
+    this.signUpButton = page.getByRole('link', { name: 'Create an Account' });
+    this.signInButton = page.getByRole('link', { name: 'Sign In' });
+    this.menTab = page.getByRole('menuitem', { name: ' Men' })
+    this.manTopsButton = page.getByRole('menuitem', { name: ' Tops' })
+    this.manJacketsButton = page.getByRole('menuitem', { name: 'Jackets' });
     this.cartCounterNumber = page.locator("//span[@class = 'counter-number']");
   }
 

@@ -23,7 +23,7 @@ export class CreateAccountPage {
     this.passwordInput = page.locator('#password');
     this.passwordConfirmationInput = page.locator('#password-confirmation');
     this.createAccountButton = page.locator('button', { hasText: 'Create' });
-    this.pageTitle = page.locator('span', { hasText: 'Account' });
+    this.pageTitle = page.locator('span', { hasText: 'Create New Customer Account' });
     this.firstNameError = page.locator('#firstname-error');
     this.lastNameError = page.locator('#lastname-error');
     this.emailError = page.locator('#email_address-error');

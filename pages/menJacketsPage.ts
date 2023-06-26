@@ -15,15 +15,15 @@ export class MenJacketsPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.pageTitle = page.locator('span', { hasText: 'Jackets' });
-    this.firstProduct = page.locator('a', { hasText: 'Beamont' });
+    this.pageTitle = page.locator('#ui-id-11');
+    this.firstProduct = page.locator('a', { hasText: 'Beaumont Summit Kit' });
     this.secondProduct = page.locator('a', { hasText: 'Hyperion' });
-    this.productPrice = page.locator('span', { hasText: '$' });
+    this.productPrice = page.getByText('$42.00');
     this.quantityField = page.locator('#qty');
     this.addToCartButton = page.locator('button', { hasText: 'Cart' });
-    this.sizeError = page.locator('#super_attribute[143]-error')
-    this.colorError = page.locator('#super_attribute[93]-error');
-    this.sizeL = page.locator('div', { hasText: 'L' });
+    this.sizeError = page.locator("//div[@id = 'super_attribute[143]-error']")
+    this.colorError = page.locator("//div[@id = 'super_attribute[93]-error']");
+    this.sizeL = page.locator("//div[@aria-label = 'L']");
     this.blackColor = page.locator("//div[@option-label = 'Black']");
   }
 

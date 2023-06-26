@@ -6,6 +6,6 @@ export class AccountPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.accountTitle = page.locator('span', { hasText: 'Account' });
+        this.accountTitle = page.locator('span', { hasText: 'My Account' });
     }
 }

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
-import CreateAccountPage from "../pages/createAccountPage";
-import HomePage from "../pages/homePage";
+import { CreateAccountPage } from "../pages/createAccountPage";
+import { HomePage } from "../pages/homePage";
 import { EmailPage } from "../helpers/emailHelper/emailPage";
 import { Constants } from "../constants";
 
@@ -12,13 +12,13 @@ test("Navigate to Create Account Page", async ({ page, baseURL }) => {
   await homePage.signupButtonClick();
 
   await expect(createAccountPage.pageTitle).toHaveText(Constants.createAccountPageTitle)
-  
+
   await page.close();
-}); 
+});
 
 test("Successfully create account and receive an email", async ({ page, baseURL, context }) => {
   const createAccountPage = new CreateAccountPage(page);
-  
+
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
@@ -31,13 +31,13 @@ test("Successfully create account and receive an email", async ({ page, baseURL,
   const secondTab = await context.newPage();
   const emailPage = new EmailPage(secondTab);
   await emailPage.verifyReceivedEmail(Constants.name);
- 
-  await page.close();
-});  
 
-test("Leaving all required fields empty", async({ page, baseURL }) => {
+  await page.close();
+});
+
+test("Leaving all required fields empty", async ({ page, baseURL }) => {
   const createAccountPage = new CreateAccountPage(page);
-  
+
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.createAccountButtonClick();
@@ -53,7 +53,7 @@ test("Leaving all required fields empty", async({ page, baseURL }) => {
 
 test("Entering different passwords", async ({ page, baseURL, context }) => {
   const createAccountPage = new CreateAccountPage(page);
-  
+
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
@@ -64,13 +64,13 @@ test("Entering different passwords", async ({ page, baseURL, context }) => {
   await createAccountPage.createAccountButtonClick();
 
   await expect(createAccountPage.passwordConfirmationError).toHaveText(Constants.samePasswordError)
- 
+
   await page.close();
-}); 
+});
 
 test("Entering invalid email", async ({ page, baseURL, context }) => {
   const createAccountPage = new CreateAccountPage(page);
-  
+
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
@@ -81,6 +81,6 @@ test("Entering invalid email", async ({ page, baseURL, context }) => {
   await createAccountPage.createAccountButtonClick();
 
   await expect(createAccountPage.emailError).toHaveText(Constants.emailError)
- 
+
   await page.close();
 }); 
