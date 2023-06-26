@@ -1,50 +1,39 @@
-import { Page } from "@playwright/test";
-const Captcha = require("2captcha");
+import { Page, Locator } from "@playwright/test";
 
-export default class LoginPage{
-    constructor (public page: Page) { }
+export class LoginPage {
+    readonly page: Page
+    readonly pageTitle: Locator
+    readonly emailInput: Locator
+    readonly passwordInput: Locator
+    readonly signInButton: Locator
+    readonly emailError: Locator
+    readonly passwordError: Locator
+    readonly createAccountButton: Locator
 
-    async enterEmail(email: string){
+    constructor(page: Page) {
+        this.page = page;
+        this.pageTitle = page.locator('span', { hasText: 'Customer' });
+        this.emailInput = page.locator('#email');
+        this.passwordInput = page.getByLabel('Password');
+        this.signInButton = page.getByRole('button', { name: 'Sign In' });
+        this.emailError = page.locator('#email-error');
+        this.passwordError = page.locator('#pass-error');
+        this.createAccountButton = page.locator('a', { hasText: 'Create an Account' });
+    }
+
+    async enterEmail(email: string) {
         await this.emailInput.type(email);
     }
 
-    async enterPassword(password: string){
+    async enterPassword(password: string) {
         await this.passwordInput.type(password);
     }
 
-    async clickSingInButton(){
+    async clickSingInButton() {
         await this.signInButton.click();
     }
 
-    async clickCreateAccountButton(){
+    async clickCreateAccountButton() {
         await this.createAccountButton.click();
-    }
-
-    get pageTitle(){
-        return this.page.locator("//span[@data-ui-id='page-title-wrapper']");
-      }
-    
-    get emailInput(){
-        return this.page.locator("//input[@id = 'email']");
-    }
-
-    get passwordInput(){
-        return this.page.locator("//input[@name= 'login[password]']");
-    }
-
-    get signInButton(){
-        return this.page.locator("(//button[@id = 'send2'])[1]");
-    }
-
-    get emailError(){
-        return this.page.locator("//div[@id = 'email-error']");
-    }
-
-    get passwordError(){
-        return this.page.locator("//div[@id = 'pass-error']");
-    }
-
-    get createAccountButton(){
-        return this.page.locator("//a[@class= 'action create primary']");
     }
 }

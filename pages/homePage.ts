@@ -1,7 +1,23 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
-export default class HomePage {
-  constructor(public page: Page) { }
+export class HomePage {
+  readonly page: Page
+  readonly signUpButton: Locator
+  readonly signInButton: Locator
+  readonly menTab: Locator
+  readonly manTopsButton: Locator
+  readonly manJacketsButton: Locator
+  readonly cartCounterNumber: Locator
+
+  constructor(page: Page) {
+    this.page = page;
+    this.signUpButton = page.getByRole('link', { name: 'Create an Account' });
+    this.signInButton = page.getByRole('link', { name: 'Sign In' });
+    this.menTab = page.getByRole('menuitem', { name: ' Men' })
+    this.manTopsButton = page.getByRole('menuitem', { name: ' Tops' })
+    this.manJacketsButton = page.getByRole('menuitem', { name: 'Jackets' });
+    this.cartCounterNumber = page.locator("//span[@class = 'counter-number']");
+  }
 
   async signupButtonClick() {
     await this.signUpButton.click();
@@ -21,29 +37,5 @@ export default class HomePage {
 
   async clickMenJacketsButton() {
     await this.manJacketsButton.click();
-  }
-
-  get signUpButton() {
-    return this.page.locator("(//a[contains(text(), 'Create an Account')])[1]");
-  }
-
-  get signInButton() {
-    return this.page.locator("(//a[contains(text(), 'Sign In')])[1]");
-  }
-
-  get menTab() {
-    return this.page.locator("//span[text() = 'Men']");
-  }
-
-  get manTopsButton() {
-    return this.page.locator("(//span[text() = 'Tops'])[2]");
-  }
-
-  get manJacketsButton() {
-    return this.page.locator("(//span[text() = 'Jackets'])[2]");
-  }
-
-  get cartCounterNumber() {
-    return this.page.locator("//span[@class = 'counter-number']");
   }
 }

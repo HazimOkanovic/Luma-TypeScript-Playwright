@@ -1,9 +1,9 @@
 import { expect, test } from "@playwright/test";
-import HomePage from "../pages/homePage";
-import MenJacketsPage from "../pages/menJacketsPage";
+import { HomePage } from "../pages/homePage";
+import { MenJacketsPage } from "../pages/menJacketsPage";
 import { Constants } from "../constants";
 
-test("Navigate to Jackets page", async({page, baseURL}) => {
+test("Navigate to Jackets page", async ({ page, baseURL }) => {
     const homePage = new HomePage(page);
     const menJacketsPage = new MenJacketsPage(page);
 
@@ -13,10 +13,10 @@ test("Navigate to Jackets page", async({page, baseURL}) => {
     await homePage.hoverOverMenTopsButton();
     await homePage.clickMenJacketsButton();
 
-    expect(await menJacketsPage.pageTitle).toHaveText("Jackets");
+    expect(await menJacketsPage.pageTitle).toHaveText(Constants.jacketsTitle);
 })
 
-test("Sort by price", async({page, baseURL}) => {
+test("Sort by price", async ({ page, baseURL }) => {
     const menJacketsPage = new MenJacketsPage(page);
 
     await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
@@ -25,10 +25,10 @@ test("Sort by price", async({page, baseURL}) => {
         value: "price"
     });
 
-    expect(await menJacketsPage.firstProduct).toHaveText("Beaumont Summit Kit")
+    expect(await menJacketsPage.firstProduct).toHaveText(Constants.beaumontJacket)
 })
 
-test("Sort by product name", async({page, baseURL}) => {
+test("Sort by product name", async ({ page, baseURL }) => {
     const menJacketsPage = new MenJacketsPage(page);
 
     await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
@@ -37,20 +37,20 @@ test("Sort by product name", async({page, baseURL}) => {
         value: "name"
     });
 
-    expect(await menJacketsPage.secondProduct).toHaveText("Hyperion Elements Jacket")
+    expect(await menJacketsPage.secondProduct).toHaveText(Constants.hyperionJacket)
 })
 
-test("Check the price", async({page, baseURL}) => {
+test("Check the price", async ({ page, baseURL }) => {
     const menJacketsPage = new MenJacketsPage(page);
 
     await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
 
     await menJacketsPage.clickFirstProduct();
 
-    expect(await menJacketsPage.productPrice).toHaveText("$45.00")
+    expect(await menJacketsPage.productPrice).toHaveText(Constants.price)
 })
 
-test("Not selecting size and color", async({page, baseURL}) => {
+test("Not selecting size and color", async ({ page, baseURL }) => {
     const menJacketsPage = new MenJacketsPage(page);
 
     await page.goto(`${baseURL}proteus-fitness-jackshirt.html`);
@@ -61,7 +61,7 @@ test("Not selecting size and color", async({page, baseURL}) => {
     expect(await menJacketsPage.colorError).toHaveText(Constants.defaultError);
 })
 
-test("Add five products to cart", async({page, baseURL}) => {
+test("Add ten products to cart", async ({ page, baseURL }) => {
     const menJacketsPage = new MenJacketsPage(page);
     const homePage = new HomePage(page);
 
@@ -73,5 +73,5 @@ test("Add five products to cart", async({page, baseURL}) => {
     await menJacketsPage.enterQuantity("10");
     await menJacketsPage.clickAddToCartButton();
 
-    expect(await homePage.cartCounterNumber).toHaveText("10");
+    expect(await homePage.cartCounterNumber).toHaveText(Constants.cartNumber);
 })
