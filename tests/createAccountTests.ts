@@ -1,22 +1,15 @@
-import { expect, test } from "@playwright/test";
-import { CreateAccountPage } from "../pages/createAccountPage";
-import { HomePage } from "../pages/homePage";
-import { EmailPage } from "../helpers/emailHelper/emailPage";
+import { expect, test } from "../tests/baseTest";
 import { Constants } from "../constants";
+import { EmailPage } from "../helpers/emailHelper/emailPage";
 
-test("Navigate to Create Account Page", async ({ page, baseURL }) => {
-  const homePage = new HomePage(page);
-  const createAccountPage = new CreateAccountPage(page);
-
+test("Navigate to Create Account Page", async ({ page, homePage, createAccountPage, baseURL }) => {
   await page.goto(`${baseURL}`);
   await homePage.signupButtonClick();
 
   await expect(createAccountPage.pageTitle).toHaveText(Constants.createAccountPageTitle)
 });
 
-test("Successfully create account and receive an email", async ({ page, baseURL, context }) => {
-  const createAccountPage = new CreateAccountPage(page);
-
+test("Successfully create account and receive an email", async ({ page, createAccountPage, baseURL, context }) => {
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
@@ -31,9 +24,7 @@ test("Successfully create account and receive an email", async ({ page, baseURL,
   await emailPage.verifyReceivedEmail(Constants.name);
 });
 
-test("Leaving all required fields empty", async ({ page, baseURL }) => {
-  const createAccountPage = new CreateAccountPage(page);
-
+test("Leaving all required fields empty", async ({ page, createAccountPage, baseURL }) => {
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.createAccountButtonClick();
@@ -45,9 +36,7 @@ test("Leaving all required fields empty", async ({ page, baseURL }) => {
   await expect(createAccountPage.passwordConfirmationError).toHaveText(Constants.defaultError);
 });
 
-test("Entering different passwords", async ({ page, baseURL, context }) => {
-  const createAccountPage = new CreateAccountPage(page);
-
+test("Entering different passwords", async ({ page, createAccountPage, baseURL }) => {
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
@@ -60,9 +49,7 @@ test("Entering different passwords", async ({ page, baseURL, context }) => {
   await expect(createAccountPage.passwordConfirmationError).toHaveText(Constants.samePasswordError)
 });
 
-test("Entering invalid email", async ({ page, baseURL, context }) => {
-  const createAccountPage = new CreateAccountPage(page);
-
+test("Entering invalid email", async ({ page, baseURL, createAccountPage }) => {
   await page.goto(`${baseURL}customer/account/create`);
 
   await createAccountPage.enterFirstName(Constants.name);
