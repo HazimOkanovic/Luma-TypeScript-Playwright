@@ -1,5 +1,5 @@
-import { expect, test } from "../tests/baseTest";
-import { Constants } from "../constants";
+import { expect, test } from "./baseTest";
+import { Constants, pagesURL } from "../constants";
 import { EmailPage } from "../helpers/emailHelper/emailPage";
 
 test.beforeEach(async ({ page, baseURL }, testInfo) => {
@@ -14,7 +14,7 @@ test("Navigate to Create Account Page", async ({ homePage, createAccountPage }) 
 });
 
 test("Successfully create account and receive an email", async ({ page, createAccountPage, baseURL, context }) => {
-  await page.goto(`${baseURL}customer/account/create`);
+  await page.goto(`${baseURL}` + pagesURL.createAccount);
 
   await createAccountPage.enterFirstName(Constants.name);
   await createAccountPage.enterLastName(Constants.name);
@@ -29,7 +29,7 @@ test("Successfully create account and receive an email", async ({ page, createAc
 });
 
 test("Leaving all required fields empty", async ({ page, createAccountPage, baseURL }) => {
-  await page.goto(`${baseURL}customer/account/create`);
+  await page.goto(`${baseURL}` + pagesURL.createAccount);
 
   await createAccountPage.createAccountButtonClick();
 
@@ -41,7 +41,7 @@ test("Leaving all required fields empty", async ({ page, createAccountPage, base
 });
 
 test("Entering different passwords", async ({ page, createAccountPage, baseURL }) => {
-  await page.goto(`${baseURL}customer/account/create`);
+  await page.goto(`${baseURL}` + pagesURL.createAccount);
 
   await createAccountPage.enterFirstName(Constants.name);
   await createAccountPage.enterLastName(Constants.name);
@@ -54,7 +54,7 @@ test("Entering different passwords", async ({ page, createAccountPage, baseURL }
 });
 
 test("Entering invalid email", async ({ page, baseURL, createAccountPage }) => {
-  await page.goto(`${baseURL}customer/account/create`);
+  await page.goto(`${baseURL}` + pagesURL.createAccount);
 
   await createAccountPage.enterFirstName(Constants.name);
   await createAccountPage.enterLastName(Constants.name);

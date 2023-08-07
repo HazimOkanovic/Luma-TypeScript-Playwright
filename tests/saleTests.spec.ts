@@ -1,4 +1,5 @@
-import { test, expect } from "../tests/baseTest";
+import { pagesURL } from "../constants";
+import { test, expect } from "./baseTest";
 
 test.beforeEach(async ({ page, baseURL }, testInfo) => {
     console.log(`Running ${testInfo.title}`);
@@ -7,7 +8,7 @@ test.beforeEach(async ({ page, baseURL }, testInfo) => {
 
 test("Go to Sales page", async ({ page, homePage }) => {
     await homePage.clickSaleTab;
-    expect(await page.url()).toMatch("https://magento.softwaretestingboard.com/sale.html");
+    expect(await page.url()).toMatch(pagesURL.saleUrl);
 })
 
 test("Shop Men Deals", async ({ homePage, salePage }) => {

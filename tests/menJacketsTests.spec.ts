@@ -1,5 +1,5 @@
-import { expect, test } from "../tests/baseTest";
-import { Constants } from "../constants";
+import { expect, test } from "./baseTest";
+import { Constants, pagesURL } from "../constants";
 
 test.beforeEach(async ({ page, baseURL }, testInfo) => {
     console.log(`Running ${testInfo.title}`);
@@ -15,7 +15,7 @@ test("Navigate to Jackets page", async ({ homePage, menJacketsPage, baseURL }) =
 })
 
 test("Sort by price", async ({ page, menJacketsPage, baseURL }) => {
-    await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
+    await page.goto(`${baseURL}` + pagesURL.menJackets);
 
     await page.selectOption("#sorter", {
         value: "price"
@@ -25,7 +25,7 @@ test("Sort by price", async ({ page, menJacketsPage, baseURL }) => {
 })
 
 test("Sort by product name", async ({ page, menJacketsPage, baseURL }) => {
-    await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
+    await page.goto(`${baseURL}` + pagesURL.menJackets);
 
     await page.selectOption("#sorter", {
         value: "name"
@@ -35,7 +35,7 @@ test("Sort by product name", async ({ page, menJacketsPage, baseURL }) => {
 })
 
 test("Check the price", async ({ page, menJacketsPage, baseURL }) => {
-    await page.goto(`${baseURL}men/tops-men/jackets-men.html`);
+    await page.goto(`${baseURL}` + pagesURL.menJackets);
 
     await menJacketsPage.clickFirstProduct();
 
@@ -43,7 +43,7 @@ test("Check the price", async ({ page, menJacketsPage, baseURL }) => {
 })
 
 test("Not selecting size and color", async ({ page, menJacketsPage, baseURL }) => {
-    await page.goto(`${baseURL}proteus-fitness-jackshirt.html`);
+    await page.goto(`${baseURL}` + pagesURL.proteusJackshirt);
 
     await menJacketsPage.clickAddToCartButton();
 
@@ -52,7 +52,7 @@ test("Not selecting size and color", async ({ page, menJacketsPage, baseURL }) =
 })
 
 test("Add ten products to cart", async ({ page, homePage, menJacketsPage, baseURL }) => {
-    await page.goto(`${baseURL}proteus-fitness-jackshirt.html`);
+    await page.goto(`${baseURL}` + pagesURL.proteusJackshirt);
 
     await menJacketsPage.chooseSizeL();
     await menJacketsPage.chooseBlackColor();

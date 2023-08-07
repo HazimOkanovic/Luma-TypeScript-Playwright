@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
-  testMatch: ["tests/saleTests.ts"],
+  testDir: "./tests",
   timeout: 5 * 60 * 1000,
   use: {
     baseURL: "https://magento.softwaretestingboard.com/",
