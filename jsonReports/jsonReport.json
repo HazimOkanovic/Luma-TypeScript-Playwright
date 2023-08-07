@@ -45,7 +45,7 @@
         "testDir": "/Users/hazim.okanovic/Documents/Playwright",
         "testIgnore": [],
         "testMatch": [
-          "tests/menJacketsTests.ts"
+          "tests/saleTests.ts"
         ],
         "timeout": 300000
       }
@@ -58,14 +58,14 @@
   },
   "suites": [
     {
-      "title": "tests/menJacketsTests.ts",
-      "file": "tests/menJacketsTests.ts",
+      "title": "tests/saleTests.ts",
+      "file": "tests/saleTests.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Add five products to cart",
-          "ok": true,
+          "title": "Go to Sales page",
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -77,33 +77,52 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 22646,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 6864,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected substring: \u001b[32m\"https://magento.softwaretestingboard.com/sale.html\"\u001b[39m\nReceived string:    \u001b[31m\"https://magento.softwaretestingboard.com/\"\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected substring: \u001b[32m\"https://magento.softwaretestingboard.com/sale.html\"\u001b[39m\nReceived string:    \u001b[31m\"https://magento.softwaretestingboard.com/\"\u001b[39m\n    at /Users/hazim.okanovic/Documents/Playwright/tests/saleTests.ts:11:30",
+                    "snippet": "   9 |     await page.goto(`${baseURL}`);\n  10 |     await homePage.clickSaleTab;\n> 11 |     expect(await page.url()).toMatch(\"https://magento.softwaretestingboard.com/sale.html\"); \n     |                              ^\n  12 | })\n  13 |\n  14 | test(\"Shop Men Deals\",async ({page, baseURL}) => {"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/hazim.okanovic/Documents/Playwright/tests/saleTests.ts",
+                        "column": 30,
+                        "line": 11
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected substring: \u001b[32m\"https://magento.softwaretestingboard.com/sale.html\"\u001b[39m\nReceived string:    \u001b[31m\"https://magento.softwaretestingboard.com/\"\u001b[39m\n\n   9 |     await page.goto(`${baseURL}`);\n  10 |     await homePage.clickSaleTab;\n> 11 |     expect(await page.url()).toMatch(\"https://magento.softwaretestingboard.com/sale.html\"); \n     |                              ^\n  12 | })\n  13 |\n  14 | test(\"Shop Men Deals\",async ({page, baseURL}) => {\n\n    at /Users/hazim.okanovic/Documents/Playwright/tests/saleTests.ts:11:30"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-06-26T07:55:59.524Z",
+                  "startTime": "2023-07-05T07:28:36.414Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-saleTests.ts-Go-to-Sales-page/video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/test-finished-1.png"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-saleTests.ts-Go-to-Sales-page/test-failed-1.png"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/hazim.okanovic/Documents/Playwright/tests/saleTests.ts",
+                    "column": 30,
+                    "line": 11
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "048cb33a73ca8790b87b-a01c1a03da507439b7be",
-          "file": "tests/menJacketsTests.ts",
-          "line": 64,
+          "id": "26a491abb1f00016ed74-b4a96ebba88bf937c3d6",
+          "file": "tests/saleTests.ts",
+          "line": 5,
           "column": 5
         }
       ]
