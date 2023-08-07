@@ -1,7 +1,7 @@
 {
   "config": {
     "configFile": "/Users/hazim.okanovic/Documents/Playwright/playwright.config.ts",
-    "rootDir": "/Users/hazim.okanovic/Documents/Playwright",
+    "rootDir": "/Users/hazim.okanovic/Documents/Playwright/tests",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -42,10 +42,10 @@
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "/Users/hazim.okanovic/Documents/Playwright",
+        "testDir": "/Users/hazim.okanovic/Documents/Playwright/tests",
         "testIgnore": [],
         "testMatch": [
-          "tests/menJacketsTests.ts"
+          "**/*.@(spec|test).?(m)[jt]s?(x)"
         ],
         "timeout": 300000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests/menJacketsTests.ts",
-      "file": "tests/menJacketsTests.ts",
+      "title": "menJacketsTests.spec.ts",
+      "file": "menJacketsTests.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Add five products to cart",
+          "title": "Navigate to Jackets page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,22 +78,26 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 22646,
+                  "duration": 17828,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "Running Navigate to Jackets page\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-06-26T07:55:59.524Z",
+                  "startTime": "2023-08-07T09:10:03.956Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/video.webm"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/menJacketsTests-Navigate-to-Jackets-page/video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/tests-menJacketsTests.ts-Add-five-products-to-cart/test-finished-1.png"
+                      "path": "/Users/hazim.okanovic/Documents/Playwright/test-results/menJacketsTests-Navigate-to-Jackets-page/test-finished-1.png"
                     }
                   ]
                 }
@@ -101,9 +105,9 @@
               "status": "expected"
             }
           ],
-          "id": "048cb33a73ca8790b87b-a01c1a03da507439b7be",
-          "file": "tests/menJacketsTests.ts",
-          "line": 64,
+          "id": "f1df2a2a416b24a20f3b-9be5e493132ce121e948",
+          "file": "menJacketsTests.spec.ts",
+          "line": 9,
           "column": 5
         }
       ]

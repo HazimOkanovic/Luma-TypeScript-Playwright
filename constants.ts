@@ -21,3 +21,11 @@ export const Constants = {
     price : "$42.00", 
     cartNumber : "10"
 } as const;
+
+export const pagesURL = {
+    createAccount : "customer/account/create", 
+    saleUrl : "https://magento.softwaretestingboard.com/sale.html",
+    menJackets : "men/tops-men/jackets-men.html", 
+    proteusJackshirt : "proteus-fitness-jackshirt.html", 
+    loginPage : "customer/account/login/refer"
+} as const;
