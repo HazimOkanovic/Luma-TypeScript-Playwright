@@ -2,8 +2,12 @@ import { expect, test } from "../tests/baseTest";
 import { Constants } from "../constants";
 import { EmailPage } from "../helpers/emailHelper/emailPage";
 
-test("Navigate to Create Account Page", async ({ page, homePage, createAccountPage, baseURL }) => {
+test.beforeEach(async ({ page, baseURL }, testInfo) => {
+  console.log(`Running ${testInfo.title}`);
   await page.goto(`${baseURL}`);
+});
+
+test("Navigate to Create Account Page", async ({ homePage, createAccountPage }) => {
   await homePage.signupButtonClick();
 
   await expect(createAccountPage.pageTitle).toHaveText(Constants.createAccountPageTitle)

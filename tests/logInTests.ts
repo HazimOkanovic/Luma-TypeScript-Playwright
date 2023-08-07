@@ -1,8 +1,12 @@
 import { expect, test } from "../tests/baseTest";
 import { Constants } from "../constants";
 
-test("Navigate to Login Page", async ({ page, homePage, loginPage, baseURL }) => {
+test.beforeEach(async ({ page, baseURL }, testInfo) => {
+  console.log(`Running ${testInfo.title}`);
   await page.goto(`${baseURL}`);
+});
+
+test("Navigate to Login Page", async ({ homePage, loginPage }) => {
   await homePage.signInButtonClick();
 
   await expect(loginPage.pageTitle).toHaveText(Constants.loginPageTitle)

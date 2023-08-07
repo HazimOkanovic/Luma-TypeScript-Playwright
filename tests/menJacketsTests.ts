@@ -1,9 +1,12 @@
 import { expect, test } from "../tests/baseTest";
 import { Constants } from "../constants";
 
-test("Navigate to Jackets page", async ({ page, homePage, menJacketsPage, baseURL }) => {
+test.beforeEach(async ({ page, baseURL }, testInfo) => {
+    console.log(`Running ${testInfo.title}`);
     await page.goto(`${baseURL}`);
+});
 
+test("Navigate to Jackets page", async ({ homePage, menJacketsPage, baseURL }) => {
     await homePage.hoverOverMenTab();
     await homePage.hoverOverMenTopsButton();
     await homePage.clickMenJacketsButton();
